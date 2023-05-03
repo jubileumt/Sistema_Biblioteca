@@ -2,7 +2,7 @@
 
 namespace Sistema_Biblioteca
 {
-   internal class Usuario : Livro
+    internal class Usuario : Livro
     {
         public string Nome;
         public string Cidade;
@@ -10,7 +10,7 @@ namespace Sistema_Biblioteca
         public int Cpf;
         public int Idade;
 
-             public static int ProcurarUsuario(Usuario[] usuarios, int cpf)
+        public static int ProcurarUsuario(Usuario[] usuarios, int cpf)
         {
             foreach (var procurar in usuarios)
             {
@@ -30,7 +30,7 @@ namespace Sistema_Biblioteca
                     Console.WriteLine("Usuario não encontrado!");
                     return 0;
                 }
-            } 
+            }
             return 0;
         }
     }

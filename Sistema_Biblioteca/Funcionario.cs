@@ -1,4 +1,5 @@
 ﻿using System;
+
 //using System.Collections.Generic;
 
 namespace Sistema_Biblioteca
@@ -11,11 +12,11 @@ namespace Sistema_Biblioteca
         protected int Cpffunci;
         protected int Senha;
 
-        public  int RegistrarFuncionario(Funcionario[] funcionarios,string nomefunci,string cargo, string  salario, int cpffunci,int senha) 
+        public int RegistrarFuncionario(Funcionario[] funcionarios, string nomefunci, string cargo, string salario, int cpffunci, int senha)
         {
             Funcionario funcionario = new Funcionario();
             {
-                Nomefunci= nomefunci;
+                Nomefunci = nomefunci;
                 Cargo = cargo;
                 Salario = salario;
                 Cpffunci = cpffunci;
@@ -40,7 +41,7 @@ namespace Sistema_Biblioteca
                 return 1;
 
             }
-        
+
         }
 
     }
