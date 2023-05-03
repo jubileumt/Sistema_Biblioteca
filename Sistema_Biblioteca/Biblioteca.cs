@@ -26,14 +26,14 @@ namespace Sistema_Biblioteca
             }
             foreach (var verificar in usuarios)
             {
-               if (verificar != null && verificar.Cpf == cpf)
+                if (verificar != null && verificar.Cpf == cpf)
                 {
                     Console.WriteLine("CPF já registrado!!");
                     Console.ReadKey();
                     Console.Clear();
                     return 0;
                 }
-             }
+            }
             var novo_usuario = new Usuario { Nome = nome, Cidade = cidade, Cpf = cpf, Idade = idade };
             usuarios[Array.IndexOf(usuarios, null)] = novo_usuario;
             Emprestimo emprestimo1 = new Emprestimo();
@@ -43,9 +43,9 @@ namespace Sistema_Biblioteca
             Console.Clear();
             return 1;
         }
-        public int registarLivro(Livro[] livros ,string nomeLivro, string autor, string genero, int numeroLivro,bool disponivel) 
+        public int registarLivro(Livro[] livros, string nomeLivro, string autor, string genero, int numeroLivro, bool disponivel)
         {
-            Livro livro = new Livro(); 
+            Livro livro = new Livro();
             {
                 NomeLivro = nomeLivro;
                 Autor = autor;
@@ -64,11 +64,11 @@ namespace Sistema_Biblioteca
                 }
             }
 
-            var novo_livro = new Livro { NomeLivro = nomeLivro, Autor = autor, Genero = Genero, NumeroDoLivro = numeroLivro, Disponivel=disponivel};
+            var novo_livro = new Livro { NomeLivro = nomeLivro, Autor = autor, Genero = Genero, NumeroDoLivro = numeroLivro, Disponivel = disponivel };
             livros[Array.IndexOf(livros, null)] = novo_livro;
 
-           //Emprestimo emprestimo = new Emprestimo();
-           // emprestimo.Copiar(livros);
+            //Emprestimo emprestimo = new Emprestimo();
+            // emprestimo.Copiar(livros);
             Console.WriteLine("Livro registrado com sucesso!");
             Console.ReadKey();
             Console.Clear();
@@ -76,4 +76,3 @@ namespace Sistema_Biblioteca
         }
     }
 }
-

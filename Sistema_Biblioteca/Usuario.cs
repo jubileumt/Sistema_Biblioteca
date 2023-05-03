@@ -6,6 +6,7 @@ namespace Sistema_Biblioteca
     {
         public string Nome;
         public string Cidade;
+        public string Telefone;
         public int Cpf;
         public int Idade;
 
@@ -16,10 +17,10 @@ namespace Sistema_Biblioteca
                 if (procurar != null & procurar.Cpf == cpf)
                 {
                     Console.WriteLine("Usuario encontrado!");
-                    Console.WriteLine(procurar.Nome);
-                    Console.WriteLine(procurar.Cidade);
-                    Console.WriteLine(procurar.Cidade);
-                    Console.WriteLine(procurar.Cpf);
+                    Console.WriteLine("Nome: " + procurar.Nome);
+                    Console.WriteLine("Cidade: " + procurar.Cidade);
+                    Console.WriteLine("Idade: " + procurar.Idade);
+                    Console.WriteLine("Cpf: " + procurar.Cpf);
                     Console.ReadKey();
                     Console.Clear();
                     return 1;

@@ -5,38 +5,22 @@ namespace Sistema_Biblioteca
 {
     internal class Emprestimo : Biblioteca
     {
-        protected Livro  livroemprestado;
+        protected Livro livroemprestado;
         protected Usuario usuarioemprestado;
         protected int datainicial;
         protected int datafinal;
 
-
-        /* public override int Copiar(Livro[] livros)
-         {
-             Livro[] livroscopiados = new Livro[livros.Length];
-             Array.Copy(livros, livroscopiados, livros.Length);
-             return 0;
-          }
-         public override int Copiar(Usuario[] usuarios)
-         {
-             Usuario[] usuarioscopiados = new Usuario[usuarios.Length];
-             Array.Copy(usuarios, usuarioscopiados, usuarios.Length);
-             return 0;
-         }
-        */
-         protected static int LivrosDisponiveis(Livro[] livroscopiados)
+        protected static int LivrosDisponiveis(Livro[] livroscopiados)
         {
-            //Livro[] livroscopiados = new Livro[livros.Length];
-            //Array.Copy(livros, livroscopiados, livros.Length);
             int contadorLivrosDisponiveis = 0;
             int i;
             foreach (var livroslivres in livroscopiados)
             {
                 if (livroslivres != null && livroslivres.Disponivel == true)
                 {
-                   
+
                     contadorLivrosDisponiveis++;
-                    if (contadorLivrosDisponiveis ==  1 )
+                    if (contadorLivrosDisponiveis == 1)
                     {
                         Console.WriteLine("-----------Livros disponiveis-----------");
                     }
@@ -54,7 +38,7 @@ namespace Sistema_Biblioteca
 
             else
             {
-                Console.WriteLine("Ainda tem livro disponivel!");
+                Console.WriteLine("Ainda não tem livros disponiveis!");
                 Console.ReadKey();
                 Console.Clear();
                 return 0;
@@ -65,13 +49,12 @@ namespace Sistema_Biblioteca
         {
             Emprestimo[] emprestimo = new Emprestimo[10];
 
-           
             Console.Write("Digite o cpf do usuario que deseja realizar emprestimo:");
             int cpf = int.Parse(Console.ReadLine());
 
             foreach (var usuariocopiado in usuarioscopiados)
             {
-                if (usuariocopiado != null && usuariocopiado.Cpf==cpf)
+                if (usuariocopiado != null && usuariocopiado.Cpf == cpf)
                 {
                     Console.WriteLine("Usuario conectado!");
                     Console.WriteLine("1 - Para verificar os livros disponiveis.");
@@ -80,14 +63,14 @@ namespace Sistema_Biblioteca
                     Console.Write("Escolha:");
                     int opc = int.Parse(Console.ReadLine());
 
-                    if (opc == 1 )
+                    if (opc == 1)
                     {
                         LivrosDisponiveis(livroscopiados);
                     }
 
                     if (opc == 2)
                     {
-                        ProcurarLivro(livroscopiados,emprestimo);
+                        ProcurarLivro(livroscopiados, emprestimo);
                     }
 
                     if (opc == 3)
@@ -98,7 +81,7 @@ namespace Sistema_Biblioteca
                         {
                             if (livroemprestado != null && livroemprestado.NomeLivro == nomelivro && livroemprestado.Disponivel == true)
                             {
-                               
+
                                 Console.WriteLine("Livro disponivel para emprestimo!");
                                 string nome = usuariocopiado.Nome;
                                 string cidade = usuariocopiado.Cidade;
@@ -110,8 +93,9 @@ namespace Sistema_Biblioteca
                                 string genero = livroemprestado.Genero;
                                 int numlivro = livroemprestado.NumeroDoLivro;
 
-                                var novo_emprestimo = new Emprestimo { Nome = nome,  Cidade = cidade,Idade=idade, Cpf = cpF, NomeLivro = nomeLivro, Autor = auto, Genero = genero, NumeroDoLivro = numlivro,Disponivel = false };
+                                var novo_emprestimo = new Emprestimo { Nome = nome, Cidade = cidade, Idade = idade, Cpf = cpF, NomeLivro = nomeLivro, Autor = auto, Genero = genero, NumeroDoLivro = numlivro, Disponivel = false };
                                 emprestimo[Array.IndexOf(emprestimo, null)] = novo_emprestimo;
+                                livroemprestado.Disponivel = false;
                                 Console.WriteLine("Emprestimo realizado com sucesso!");
                                 Console.ReadKey();
                                 Console.Clear();
@@ -121,6 +105,6 @@ namespace Sistema_Biblioteca
                 }
             }
         }
-        
+
     }
 }

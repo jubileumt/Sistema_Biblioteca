@@ -31,6 +31,7 @@ namespace Sistema_Biblioteca
                         return 0;
                     }
                 }
+
                 var novo_funcionario = new Funcionario { Nomefunci = nomefunci, Cargo = cargo, Salario = salario, Cpffunci = cpffunci, Senha = senha };
                 funcionarios[Array.IndexOf(funcionarios, null)] = novo_funcionario;
                 Console.WriteLine("Funcionarios cadastrado com sucesso!");

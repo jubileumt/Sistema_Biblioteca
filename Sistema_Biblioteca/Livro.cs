@@ -14,25 +14,29 @@ namespace Sistema_Biblioteca
 
         public static int ProcurarLivro(Livro[] livroscopiados, Emprestimo[] empretimos)
         {
-            Console.Write("Digite o ISBN (International Standard Book Number) do livro: ");
-            int isbn = int.Parse(Console.ReadLine());
-            foreach (var procurar in empretimos)
+            Console.Write("Digite o nome do livro do livro: ");
+            string nomelivro = Console.ReadLine();
+
+            foreach (var procurar in livroscopiados)
             {
-                if (procurar != null && procurar.NumeroDoLivro == isbn)
+                if (procurar != null && procurar.NomeLivro == nomelivro)
                 {
                     Console.WriteLine("Livro encontrado!");
                     Console.WriteLine("Nome do livro:" + procurar.NomeLivro);
                     Console.WriteLine("Nome do autor do livro:" + procurar.Autor);
                     Console.WriteLine("Preço do livro:" + procurar.Genero);
                     Console.WriteLine("ISBN do livro:" + procurar.NumeroDoLivro);
+
                     if (procurar.Disponivel == true)
                     {
                         Console.WriteLine("Livro disponivel para emprestimo");
                     }
+
                     else
                     {
-                        Console.WriteLine("Livro nao disponivel para emprestimo!");
+                        Console.WriteLine("Livro não disponivel para emprestimo!");
                     }
+
                     Console.ReadKey();
                     Console.Clear();
                     return 1;
@@ -45,7 +49,8 @@ namespace Sistema_Biblioteca
                     return 0;
                 }
             }
-                    return 0;
+            return 0;
         }
     }
 }
+
